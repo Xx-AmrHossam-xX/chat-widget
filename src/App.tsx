@@ -1,24 +1,33 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import ChatButton from "./components/ChatButton/ChatButton";
+import ChatWindow from "./components/ChatWindow/ChatWindow";
+import { useTranslation } from "react-i18next";
+import "./App.css";
 
 function App() {
+  const [isOpen, setIsOpen] = useState(false);
+  const { t, i18n } = useTranslation();
+  const onClickLanguageChange = (e: any) => {
+    const language = e.target.value;
+    i18n.changeLanguage(language); //change the language
+  };
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+    <div className="wrapper" dir={i18n.dir()}>
+      <div>
+        <select
+          className="custom-select"
+          style={{ width: 200 }}
+          onChange={onClickLanguageChange}
         >
-          Learn React
-        </a>
-      </header>
+          <option value="en">English</option>
+          <option value="ar">عربى</option>
+        </select>
+      </div>
+      {!isOpen ? (
+        <ChatButton setIsOpen={setIsOpen} />
+      ) : (
+        <ChatWindow setIsOpen={setIsOpen} />
+      )}
     </div>
   );
 }

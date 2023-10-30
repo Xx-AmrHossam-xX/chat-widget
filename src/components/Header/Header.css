@@ -1,0 +1,28 @@
+.close-chat-window {
+  background-color: transparent;
+  padding: 0px;
+  border: 0px;
+  outline: unset;
+  cursor: pointer;
+  font-size: 22px;
+}
+.window-header {
+  height: 65px;
+  border-bottom: 1px solid black;
+  display: flex;
+  justify-content: space-between;
+  padding: 0.8rem;
+  box-sizing: border-box;
+}
+.profilepic-name {
+  display: flex;
+}
+.profilepic-name img {
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+}
+.profilepic-name span {
+  margin-inline-start: 10px;
+  margin-top: 5px;
+}

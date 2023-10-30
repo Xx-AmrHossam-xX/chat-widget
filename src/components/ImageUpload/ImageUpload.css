@@ -1,0 +1,6 @@
+.image-label-input .image-icon {
+  cursor: pointer;
+}
+.image-label-input input {
+  display: none;
+}

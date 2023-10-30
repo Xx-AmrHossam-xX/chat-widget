@@ -1,0 +1,12 @@
+.chat-button {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border-width: 0px;
+  outline: unset;
+  background-color: darkolivegreen;
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;
+  cursor: pointer;
+}
